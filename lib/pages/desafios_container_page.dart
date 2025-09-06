@@ -133,6 +133,7 @@ class DesafiosContainerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text("DESAFÍOS DE CONTAINERS")),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
