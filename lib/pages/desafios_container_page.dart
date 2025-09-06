@@ -93,6 +93,42 @@ class DesafiosContainerPage extends StatelessWidget {
     );
   }
 
+  Widget _buildDegrade() {
+    return Container(
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.all(32),
+      width: double.infinity,
+      height: 200,
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.deepOrange.shade600, Colors.orange.shade400],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          stops: [0.25, 0.9],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.4),
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset: Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Text(
+        'Challenge',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 60,
+          fontWeight: FontWeight.w200,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -101,7 +137,12 @@ class DesafiosContainerPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [_buildCircleH(), _drawHeader(), _buildChallenge3()],
+              children: [
+                _buildCircleH(),
+                _drawHeader(),
+                _buildChallenge3(),
+                _buildDegrade(),
+              ],
             ),
           ),
         ),
