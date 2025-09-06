@@ -12,6 +12,19 @@ class _HomePageState extends State<HomePage> {
     return Future.delayed(Duration(seconds: 3), () => "Los inocentes");
   }
 
+  Future<void> fetchTitle() async {
+    getTitleAsync().then((value) {
+      title = value;
+      setState(() {});
+    });
+  }
+
+  @override
+  void initState() {
+    fetchTitle();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // No debería ir aquí por que en cada camvio de estado va asignar siempre el valor de gettitleAsync a la variable title
