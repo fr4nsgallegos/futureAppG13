@@ -40,7 +40,14 @@ class _PerfilPageState extends State<PerfilPage> {
         body: FutureBuilder(
           future: getInfoPerfil(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
-            return Container(width: 50, height: 50, color: Colors.red);
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text("Error ${snapshot.error}"));
+            } else {
+              final PersonaModel user = snapshot.data!;
+              return PerfilCardWidget(user);
+            }
           },
         ),
 
