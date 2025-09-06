@@ -19,9 +19,15 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Future<void> fetchTitle2() async {
+    title = await getTitleAsync();
+    setState(() {});
+  }
+
   @override
   void initState() {
-    fetchTitle();
+    // fetchTitle();
+    fetchTitle2();
     super.initState();
   }
 
