@@ -137,34 +137,30 @@ class DesafiosContainerPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(title: Text("DESAFÍOS DE CONTAINERS")),
-        body: Stack(
-          children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xffB63561), Color(0xff242A6B)],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                  stops: [0.3, 0.8],
-                ),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xffB63561), Color(0xff242A6B)],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              stops: [0.3, 0.8],
+            ),
+          ),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _buildCircleH(),
+                  _drawHeader(),
+                  _buildChallenge3(),
+                  _buildDegrade(),
+                ],
               ),
             ),
-            Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _buildCircleH(),
-                    _drawHeader(),
-                    _buildChallenge3(),
-                    _buildDegrade(),
-                  ],
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
