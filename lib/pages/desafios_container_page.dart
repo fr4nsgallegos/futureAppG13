@@ -51,14 +51,58 @@ class DesafiosContainerPage extends StatelessWidget {
     );
   }
 
+  Widget _buildChallenge3() {
+    return Container(
+      width: 300,
+      height: 70,
+      decoration: BoxDecoration(
+        color: Colors.lightBlue.shade200,
+        borderRadius: BorderRadius.circular(35),
+      ),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              child: Center(
+                child: Text(
+                  'Challenge',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(35),
+                  bottomRight: Radius.circular(35),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [_buildCircleH(), _drawHeader()],
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [_buildCircleH(), _drawHeader(), _buildChallenge3()],
+            ),
           ),
         ),
       ),
