@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DesafiosContainerPage extends StatelessWidget {
   const DesafiosContainerPage({super.key});
@@ -119,12 +120,13 @@ class DesafiosContainerPage extends StatelessWidget {
       ),
       child: Text(
         'Challenge',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 60,
-          fontWeight: FontWeight.w200,
-          fontStyle: FontStyle.italic,
-        ),
+        style: GoogleFonts.festive(fontSize: 60, color: Colors.white),
+        // TextStyle(
+        //   color: Colors.white,
+        //   fontSize: 60,
+        //   fontWeight: FontWeight.w200,
+        //   fontStyle: FontStyle.italic,
+        // ),
       ),
     );
   }
