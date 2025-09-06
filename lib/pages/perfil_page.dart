@@ -37,24 +37,31 @@ class _PerfilPageState extends State<PerfilPage> {
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: personaPerfil == null
-            ? Center(child: CircularProgressIndicator())
-            : Stack(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: screenHeight / 4,
-                    decoration: BoxDecoration(
-                      color: Color(0xff71829C),
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30),
-                      ),
-                    ),
-                  ),
-                  PerfilCardWidget(personaPerfil!),
-                ],
-              ),
+        body: FutureBuilder(
+          future: getInfoPerfil(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            return Container(width: 50, height: 50, color: Colors.red);
+          },
+        ),
+
+        //  personaPerfil == null
+        //     ? Center(child: CircularProgressIndicator())
+        //     : Stack(
+        //         children: [
+        //           Container(
+        //             width: double.infinity,
+        //             height: screenHeight / 4,
+        //             decoration: BoxDecoration(
+        //               color: Color(0xff71829C),
+        //               borderRadius: BorderRadius.only(
+        //                 bottomRight: Radius.circular(30),
+        //                 bottomLeft: Radius.circular(30),
+        //               ),
+        //             ),
+        //           ),
+        //           PerfilCardWidget(personaPerfil!),
+        //         ],
+        //       ),
       ),
     );
   }
