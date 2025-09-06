@@ -69,8 +69,9 @@ class DesafiosContainerPage extends StatelessWidget {
                 child: Text(
                   'Challenge',
                   style: TextStyle(
+                    fontFamily: "Explora",
                     color: Colors.white,
-                    fontSize: 22,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -14,8 +14,11 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        // OPCIÓN 1: Aplicar la fuente a todo el texttheme
-        textTheme: GoogleFonts.poppinsTextTheme(),
+        // OPCIÓN 1: Aplicar la fuente a todo el texttheme con googlefonts
+        // textTheme: GoogleFonts.poppinsTextTheme(),
+
+        // opcion2: aplicar fuente desde asset
+        fontFamily: "Roboto",
 
         // Personalizar appbar
         appBarTheme: AppBarTheme(
